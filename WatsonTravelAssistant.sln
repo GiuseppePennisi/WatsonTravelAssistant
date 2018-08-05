@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatsonTravelAssistant.Andro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatsonTravelAssistant.iOS", "WatsonTravelAssistant\WatsonTravelAssistant.iOS\WatsonTravelAssistant.iOS.csproj", "{BCD9AF2B-7617-4D81-8CAF-AB03D06615DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatsonTravelAssistant", "WatsonTravelAssistant\WatsonTravelAssistant\WatsonTravelAssistant.csproj", "{E52AF057-232D-4677-81F6-87CE614301D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatsonTravelAssistant", "WatsonTravelAssistant\WatsonTravelAssistant\WatsonTravelAssistant.csproj", "{E52AF057-232D-4677-81F6-87CE614301D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
