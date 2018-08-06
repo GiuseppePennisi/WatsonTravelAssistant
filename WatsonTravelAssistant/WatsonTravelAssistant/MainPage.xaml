@@ -5,9 +5,26 @@
              x:Class="WatsonTravelAssistant.MainPage">
 
     <StackLayout>
-        
-        
-        
+        <!-- Place new controls here -->
+    	<Label Text="Insert a request!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+
+        <Entry x:Name="EntryUrl"
+                   Placeholder="request" PlaceholderColor="#BDBDBD" TextColor="#757575">
+        </Entry>
+        <Button x:Name="requestButton"
+                Text="request"
+                Font="small"
+                HorizontalOptions="End"
+                Clicked="onRequest"
+                Margin="0,40,0,0"
+                
+                BackgroundColor="#FF9800"
+                TextColor="White"
+                >
+
+        </Button>
     </StackLayout>
 
 </ContentPage>
