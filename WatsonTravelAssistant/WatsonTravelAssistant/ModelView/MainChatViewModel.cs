@@ -44,7 +44,13 @@ namespace WatsonTravelAssistant.ModelView
 
                 Messages.Add(message);
 
-                messanger.CallConversation(message.Text);
+                var incomingMessage = new Message
+                {
+                    Text = messanger.CallConversation(message.Text),
+                    IsIncoming = true,
+                    MessageDateTime = DateTime.Now
+                };
+                Messages.Add(incomingMessage);
 
                 OutGoingText = string.Empty;
             });
