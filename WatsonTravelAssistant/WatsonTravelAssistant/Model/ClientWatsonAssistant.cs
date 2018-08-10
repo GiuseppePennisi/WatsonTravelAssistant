@@ -18,7 +18,6 @@ namespace WatsonTravelAssistant.utils
             _conversation = new ConversationService("afcea3f6-1a23-4f95-aa62-51304447f1a2", "p0nzObAmUj42", "2018-02-16");
             _conversation.SetEndpoint("https://gateway.watsonplatform.net/assistant/api");
             _workspaceID = "56e7c413-006c-42b5-b618-c87f1c549966";
-            
         }
 
        public Action<Message> MessageAdded { get; set; }
@@ -40,12 +39,14 @@ namespace WatsonTravelAssistant.utils
                 messageRequest.Context.ConversationId = _questionContext.conversation_id;
                 messageRequest.Context.System = _questionContext.system;
             }
+
+            var result = _conversation.Message(_workspaceID,messageRequest);
             
-            var result = JsonConvert.SerializeObject(_conversation.Message(_workspaceID, messageRequest), Formatting.Indented);
-            ResponseWatson response = JsonConvert.DeserializeObject<ResponseWatson>(result);
-            return response.output.text[0];
-            // Console.WriteLine("Output"+ response.output.text[0]);
+            var jsonOutput = JsonConvert.SerializeObject(result, Formatting.Indented);
+            var outputText = JsonConvert.DeserializeObject<ResponseWatson>(jsonOutput);
+            _questionContext = result.Context;
             
+            return outputText.output.text[0];
         }
 
 

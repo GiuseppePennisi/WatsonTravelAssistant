@@ -32,6 +32,17 @@ namespace WatsonTravelAssistant.ModelView
 
             Messages = new ObservableRangeCollection<Message>();
 
+           
+
+            var welcomeMessage = new Message
+            {
+                Text = messanger.CallConversation(""),
+                IsIncoming = false,
+                MessageDateTime = DateTime.Now
+            };
+            
+            Messages.Add(welcomeMessage);
+            
             SendCommand = new Command(() =>
             {
                 var message = new Message

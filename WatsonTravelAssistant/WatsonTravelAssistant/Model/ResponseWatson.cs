@@ -4,6 +4,21 @@ using System.Text;
 
 namespace WatsonTravelAssistant.Model
 {
+    public class Metadata
+    {
+        public string calendar_type { get; set; }
+        public string timezone { get; set; }
+    }
+
+    public class Entity
+    {
+        public string entity { get; set; }
+        public List<int> location { get; set; }
+        public string value { get; set; }
+        public int confidence { get; set; }
+        public Metadata metadata { get; set; }
+    }
+
     public class Input
     {
         public string text { get; set; }
@@ -60,7 +75,7 @@ namespace WatsonTravelAssistant.Model
     {
         public Input input { get; set; }
         public List<Intent> intents { get; set; }
-        public List<object> entities { get; set; }
+        public List<Entity> entities { get; set; }
         public bool alternate_intents { get; set; }
         public Context context { get; set; }
         public Output output { get; set; }
